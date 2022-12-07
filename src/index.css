@@ -1,215 +1,245 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    height: 100vh;
-    display: grid;
-    place-content: center;
-    position: relative;
-    z-index: 10;
-    transition: all .3s ease-in;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease-in;
 }
 
 main::before,
 main::after {
-    content: "";
-    height: 25rem;
-    width: 100%;
-    position: absolute;
-    display: block;
-    background: rgb(255,255,255);
-background: linear-gradient(51deg, rgba(255,255,255,1) 0%, rgba(233,233,233,1) 100%);
-z-index: 20;
+  content: "";
+  height: 25rem;
+  width: 100%;
+  position: absolute;
+  display: block;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    51deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(233, 233, 233, 1) 100%
+  );
+  z-index: 20;
 }
 
 main::before {
-    top: 0;
-    left: 0;  
-    clip-path: polygon(0 0, 0 40%, 100% 0);
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 0 40%, 100% 0);
 }
 
 main::after {
-    bottom: 0;
-    right: 0;
-    clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 68%, 0 100%, 100% 100%);
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 button {
-    position: absolute;
-    cursor: pointer;
-    top: 1rem;
-    left: 1rem;
-    border: none;
-    background-color: tomato;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    padding: .6rem 1rem;
-    transition: background-color .2s ease-in;
-    z-index: 30;
+  position: absolute;
+  cursor: pointer;
+  top: 1rem;
+  left: 1rem;
+  border: none;
+  background-color: tomato;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  padding: 0.6rem 1rem;
+  transition: background-color 0.2s ease-in;
+  z-index: 30;
 }
 
 button:hover {
-    background-color: black;
+  background-color: black;
 }
 
 button.button__theme {
-    border-radius: 50%;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 6.5rem;
-    width: 37px;
-    height:  37px;
-    padding: initial;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 6.5rem;
+  width: 37px;
+  height: 37px;
+  padding: initial;
 
-    transition: outline .2s ease;
+  transition: outline 0.2s ease;
 }
 
 .button__icon-theme {
-    width: 15px;
+  width: 15px;
 }
 
 .giphy {
-    max-width: 380px;
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    column-gap: 1rem;
-    position: relative;
-    z-index: 40;
+  max-width: 380px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 1rem;
+  position: relative;
+  z-index: 40;
 }
 
 .giphy__image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    object-position: center;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
 
-    animation: image-animation;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-
+  animation: image-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .giphy__text {
-    color: #555;
-    font-family: 'Roboto Slab', serif;
-    font-size: .960rem;
-    font-weight: 400;
-    line-height: 1.4;
+  color: #555;
+  font-family: "Roboto Slab", serif;
+  font-size: 0.96rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .giphy__image-shadow {
-    position: relative;
-    top: 15px;
-    height: 4px;
-    width: 80%;
-    border-radius: 50%;
-    filter: blur(6px);
-    background-color: black;
-    margin: 0 auto;
-    z-index: -10;
+  position: relative;
+  top: 15px;
+  height: 4px;
+  width: 80%;
+  border-radius: 50%;
+  filter: blur(6px);
+  background-color: black;
+  margin: 0 auto;
+  z-index: -10;
 
-    animation: image-shadow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    
+  animation: image-shadow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .loader {
-    width: 2.5rem;
+  width: 2.5rem;
 }
 
 .error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
 }
 
 .error__img {
-    width: 50px;
+  width: 50px;
 }
 
 .error__text {
-    font-family: 'Roboto Slab', serif;
-    font-weight: bold;
-    color: red;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  color: red;
 }
 
-
-
 @keyframes image-shadow {
+  50% {
+    transform: scale(0.5);
+  }
 
-    50% {
-        transform: scale(.5);
-    }
-
-    80% {
-        transform: scale(1);
-    }
+  80% {
+    transform: scale(1);
+  }
 }
 
 @keyframes image-animation {
-   0% {transform: translateY(.360rem);}
-   50% {transform: translateY(0);}
-   100% {transform: translateY(.360rem);}
+  0% {
+    transform: translateY(0.36rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0.36rem);
+  }
 }
-
 
 /* ==============  Darkmode theme   =================  */
 
 main.darkmode {
-    background-color: #0f0f0f;
+  background-color: #0f0f0f;
 }
 
 main.darkmode::after,
-main.darkmode::before{
-    background: rgb(15,15,15);
-background: linear-gradient(40deg, rgba(15,15,15,1) 36%, rgba(75,75,75,1) 100%);
+main.darkmode::before {
+  background: rgb(15, 15, 15);
+  background: linear-gradient(
+    40deg,
+    rgba(15, 15, 15, 1) 36%,
+    rgba(75, 75, 75, 1) 100%
+  );
 }
 
 main.darkmode .giphy__text {
-    color: #ddd;
+  color: #ddd;
 }
 
 main.darkmode button {
-    background-color: #333;
+  background-color: #333;
 }
 
 main.darkmode button:hover {
-    background-color: tomato;
+  background-color: tomato;
 }
 
 main.darkmode .giphy__image-shadow {
-    background-color: #777;
+  background-color: #777;
 }
 
 main.darkmode button.button__theme {
-    border-radius: 50%;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 6.5rem;
-    width: 37px;
-    height:  37px;
-    padding: initial;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 6.5rem;
+  width: 37px;
+  height: 37px;
+  padding: initial;
 }
 
 main.darkmode .button__icon-theme,
 main.darkmode .loader {
-    filter: invert(100%);
+  filter: invert(100%);
+}
+
+/* === Media Queries ===*/
+
+@media screen and (max-width: 420px) {
+  .giphy {
+    width: 85%;
+    max-width: 360px;
+    grid-template-columns: 100%;
+    justify-items: center;
+    justify-self: center;
+    row-gap: 2.5rem;
+  }
+
+  .giphy__text {
+    text-align: center;
+  }
+
+  .giphy__image {
+    width: 160px;
+    height: 160px;
+  }
 }
